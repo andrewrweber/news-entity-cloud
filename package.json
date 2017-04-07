@@ -19,8 +19,11 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
+    "axios": "^0.16.0",
     "express": "^4.15.2",
+    "lodash": "^4.17.4",
     "react": "^15.4.2",
+    "react-d3-cloud": "^0.4.1",
     "react-dom": "^15.4.2"
   },
   "scripts": {
