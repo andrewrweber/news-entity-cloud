@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import './app.css';
 
+import TopNav from './topNav';
 import CloudViewer from './cloudViewer';
 
 export default class App extends Component {
@@ -37,20 +38,26 @@ export default class App extends Component {
   }
 
   updateWindowDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
+    this.setState({ 
+      width: window.innerWidth - (window.innerWidth * .1), 
+      height: window.innerHeight - (window.innerHeight * .2)
+    });
   }
 
   render() {
     return (
       <div>
+        <TopNav />
+        <div className="app-container">
         {this.state.newsOrgs ? 
           <CloudViewer 
             width={this.state.width} 
-            height={this.props.height} 
+            height={this.state.height} 
             newsOrgs={this.state.newsOrgs}
           /> :
           <div>Loading</div>
         }
+        </div>
       </div>
     );
   }

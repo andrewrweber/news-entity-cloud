@@ -23,7 +23,6 @@ const CloudElement = ({orgData, width, height}) => {
 
   return (
     <div className="word-cloud">
-      <h2>{orgData.key}</h2>
       <WordCloud 
         data={cloudData} 
         fontSizeMapper={fontSizeMapper}
