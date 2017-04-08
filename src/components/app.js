@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './app.css';
+import '../vendor/skeleton.css';
 
 import TopNav from './topNav';
 import CloudViewer from './cloudViewer';
