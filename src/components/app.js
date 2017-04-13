@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import './app.css';
-import '../vendor/skeleton.css';
+import _ from 'lodash';
+import '../scss/main.scss';
 
 import TopNav from './topNav';
 import CloudViewer from './cloudViewer';
@@ -12,7 +12,8 @@ export default class App extends Component {
     this.state = {
       newsOrgs: null,
       width: '0',
-      height: '0'
+      height: '0',
+      newsOrgFilter: "foxNews"
     }
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
 
@@ -20,6 +21,7 @@ export default class App extends Component {
   componentWillMount() {
     axios.get('https://entities-in-the-news-api.appspot.com/entities')
       .then((response) => {
+        console.log(response.data);
         this.setState({
           newsOrgs: response.data
         })
@@ -45,16 +47,26 @@ export default class App extends Component {
     });
   }
 
+  filterNewsOrgs (orgs, filter) {
+    return _.filter(orgs, (org) => {
+      return org.key === filter
+    });
+  }
+
+  setFilter(filter) {
+    this.setState({newsOrgFilter: filter});
+  }
+  
   render() {
     return (
       <div>
-        <TopNav />
+        <TopNav setOrgFilter={this.setFilter.bind(this)}/>
         <div className="app-container">
         {this.state.newsOrgs ? 
           <CloudViewer 
             width={this.state.width} 
             height={this.state.height} 
-            newsOrgs={this.state.newsOrgs}
+            newsOrgs={this.filterNewsOrgs(this.state.newsOrgs, this.state.newsOrgFilter)}
           /> :
           <div>Loading</div>
         }

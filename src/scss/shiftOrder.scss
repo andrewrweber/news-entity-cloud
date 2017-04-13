@@ -1,0 +1,13 @@
+.news-option-select {
+    border: none;
+    background: transparent;
+    font-size: 150%;
+
+    &:focus {
+        outline: none;
+    }
+
+    option {
+        font-size: 17px;
+    }
+}

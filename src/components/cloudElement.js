@@ -1,11 +1,7 @@
 import React from 'react';
 import WordCloud from 'react-d3-cloud';
 
-import './cloudElement.css';
-
 const CloudElement = ({orgData, width, height}) => {
-
-  console.log(width, height);
   const fontScale = 120;
   let maxValue = 0;
   let minValue = 100;

@@ -1,6 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
-import './cloudViewer.css'
+
 import CloudElement from './cloudElement';
 
 const CloudViewer = ({newsOrgs, width, height}) => {

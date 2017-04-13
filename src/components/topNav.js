@@ -1,14 +1,27 @@
-import React from 'React';
+import React from 'react';
 
-import './topNav.css';
+import '../scss/shiftOrder.scss';
 
-const TopNav = () => {
+const NewsOptions = ({setOrgFilter}) => {
+  const handleChange = ({target}) => {
+    setOrgFilter(target.value);
+  }
+  return (
+    <select onChange={handleChange} className="news-option-select">
+      <option value="foxNews">Fox News</option>
+      <option value="cnn">CNN</option>
+      <option value="abc">ABC</option>
+    </select>
+  );
+}
+
+
+const TopNav = ({setOrgFilter}) => {
   return (
     <nav className="navbar">
-      <div className="container">
-        <ul className="nav-items">
-
-        </ul>
+      <div className="navbar-container">
+        <div className="title">What's popular in </div>
+        <NewsOptions setOrgFilter={setOrgFilter}/>
       </div>
     </nav>
   );
