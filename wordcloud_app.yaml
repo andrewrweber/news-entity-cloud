@@ -1,2 +1,6 @@
+service: wordcloud-app
 runtime: nodejs
 env: flex
+
+skip_files:
+ - ^node_modules$
