@@ -1,7 +1,5 @@
 import React from 'react';
 
-import '../scss/shiftOrder.scss';
-
 const NewsOptions = ({setOrgFilter}) => {
   const handleChange = ({target}) => {
     setOrgFilter(target.value);
