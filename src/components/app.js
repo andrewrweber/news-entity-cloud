@@ -21,7 +21,6 @@ export default class App extends Component {
   componentWillMount() {
     axios.get('https://entities-in-the-news-api.appspot.com/entities')
       .then((response) => {
-        console.log(response.data);
         this.setState({
           newsOrgs: response.data
         })
