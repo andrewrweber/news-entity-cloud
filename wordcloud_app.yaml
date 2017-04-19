@@ -1,4 +1,3 @@
-service: wordcloud-app
 runtime: nodejs
 env: flex
 
