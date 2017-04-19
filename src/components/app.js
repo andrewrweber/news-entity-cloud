@@ -16,6 +16,7 @@ export default class App extends Component {
       newsOrgFilter: "foxNews"
     }
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    this.updateWindowDimensions = _.debounce(this.updateWindowDimensions, 250);
 
   }
   componentWillMount() {
