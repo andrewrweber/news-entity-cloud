@@ -19,7 +19,7 @@ export default class App extends Component {
 
   }
   componentWillMount() {
-    axios.get('https://entities-in-the-news-api.appspot.com/entities')
+    axios.get('https://api-dot-entities-in-the-news-api.appspot.com/entities')
       .then((response) => {
         this.setState({
           newsOrgs: response.data
