@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  -ms-flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 25px;
+  background-color: rgb(232,232,232);
+
+  .byline {
+    font-family: $open-sans;
+    padding-right: 10px;
+  }
+}

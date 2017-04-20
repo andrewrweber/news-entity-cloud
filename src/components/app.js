@@ -4,6 +4,7 @@ import _ from 'lodash';
 import '../scss/main.scss';
 
 import TopNav from './topNav';
+import Footer from './footer';
 import CloudViewer from './cloudViewer';
 
 export default class App extends Component {
@@ -71,6 +72,7 @@ export default class App extends Component {
           <div>Loading</div>
         }
         </div>
+        <Footer />
       </div>
     );
   }
